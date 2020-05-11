@@ -26,7 +26,7 @@ function OutlinedButton(props: ButtonProperties) {
         style={props.style}
         onClick={props.onPress}
         variant="outlined"
-        color="secondary">
+        color="primary">
         {props.title}
       </Button>
     </div>
@@ -41,7 +41,7 @@ function ContainedButton(props: ButtonProperties) {
         style={props.style}
         onClick={props.onPress}
         variant="contained"
-        color="secondary">
+        color="primary">
         {props.title}
       </Button>
     </div>

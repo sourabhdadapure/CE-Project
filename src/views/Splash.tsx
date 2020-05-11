@@ -1,6 +1,6 @@
 import * as React from "react";
 import Typography from "@material-ui/core/Typography";
-import { Buttons } from "../components";
+import { Buttons, Paper } from "../components";
 import { connect } from "react-redux";
 import { login } from "../modules/user";
 
@@ -15,9 +15,14 @@ export default class Splash extends React.Component<Props, {}> {
   render() {
     const { login } = this.props;
     return (
-      <div>
-        <Typography>Splash</Typography>
-        <Buttons.Contained title="Login With Google" onPress={() => login()} />
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Paper>
+          <Typography>Splash</Typography>
+          <Buttons.Contained
+            title="Login With Google"
+            onPress={() => login()}
+          />
+        </Paper>
       </div>
     );
   }

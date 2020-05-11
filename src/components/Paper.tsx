@@ -13,8 +13,10 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: "red",
       marginTop: theme.spacing(8),
       width: 300 + theme.spacing(5) * 2,
+      height: 300 + theme.spacing(5) * 3,
       display: "flex",
       flexDirection: "column",
+      justifyContent: "center",
       alignItems: "center",
       padding: `${theme.spacing(2)}px ${theme.spacing(1)}px ${theme.spacing(
         3
