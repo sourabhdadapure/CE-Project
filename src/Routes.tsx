@@ -19,14 +19,14 @@ interface Props {
 @(connect((state: UserModel) => state) as any)
 export default class App extends React.Component<Props, {}> {
   render() {
-    console.log("user", this.props.user);
+    const { user } = this.props;
     return (
       <Router>
         <div>
           <HeaderBar title="Budget Planner" />
           <Switch>
             {/* TODO: add authenticated route later */}
-            {this.props.user.user ? (
+            {user.isAuthenticated ? (
               <React.Fragment>
                 <Redirect to="/home" />
                 <Route exact component={Home} />

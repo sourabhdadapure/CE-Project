@@ -2,13 +2,13 @@ import types from "./types";
 
 export type UserModel = {
   loading: boolean;
-  user: any;
+  isAuthenticated: boolean;
   error: any;
 };
 
 export const initialState: UserModel = {
   loading: false,
-  user: undefined,
+  isAuthenticated: false,
   error: undefined,
 };
 
@@ -18,7 +18,7 @@ export default function (state = initialState, action: any) {
       return {
         ...state,
         loading: true,
-        user: undefined,
+        isAuthenticated: undefined,
         error: undefined,
       };
     }
@@ -27,7 +27,7 @@ export default function (state = initialState, action: any) {
       return {
         ...state,
         loading: false,
-        user: action.payload,
+        isAuthenticated: action.payload,
         error: undefined,
       };
     }
@@ -35,7 +35,7 @@ export default function (state = initialState, action: any) {
       return {
         ...state,
         loading: false,
-        user: undefined,
+        isAuthenticated: undefined,
         error: action.error,
       };
     }
