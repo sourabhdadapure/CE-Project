@@ -38,7 +38,6 @@ export const HeaderBar: React.FC<HeaderProperties> = ({ title }) => {
             className={classes.title}>
             {title}
           </Typography>
-          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>
