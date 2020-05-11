@@ -15,15 +15,6 @@ interface Props {
   updateBudget,
 }) as any)
 export default class Home extends React.Component<Props, {}> {
-  // componentDidUpdate = (prevProps: any) => {
-  //   const { budget, updateBudget } = this.props;
-  //   if (
-  //     budget.salary !== prevProps.salary ||
-  //     budget.expensePercentage !== prevProps.expensePercentage
-  //   ) {
-  //     updateBudget({ ...budget });
-  //   }
-  // };
   render() {
     const { budget, updateBudget } = this.props;
 
@@ -37,7 +28,6 @@ export default class Home extends React.Component<Props, {}> {
             onChange={(val) => {
               const expensePercentage = val;
               updateBudget({ ...budget, expensePercentage });
-              // this.setState({ expenseInPercentage: val });
             }}
           />
           <InputField
