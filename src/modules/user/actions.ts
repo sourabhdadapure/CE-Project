@@ -12,7 +12,7 @@ export const login = () => {
     // TODO: update this to async await
     appAuth
       .auth()
-      .signInWithRedirect(provider)
+      .signInWithPopup(provider)
       .then((user) => dispatch({ type: types.LOGIN_SUCCESS, payload: user }))
       .catch((err) => dispatch({ type: types.LOGIN_ERROR, error: err }));
   };

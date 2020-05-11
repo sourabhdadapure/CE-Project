@@ -9,7 +9,7 @@ import "./App.css";
 import { HeaderBar } from "../src/components";
 import Splash from "../src/views/Splash";
 import { connect } from "react-redux";
-import { UserModel } from "./modules/user";
+import { UserModel } from "./modules/user/reducers";
 import Home from "./views/Home";
 
 interface Props {
@@ -19,6 +19,7 @@ interface Props {
 @(connect((state: UserModel) => state) as any)
 export default class App extends React.Component<Props, {}> {
   render() {
+    console.log("user", this.props.user);
     return (
       <Router>
         <div>
