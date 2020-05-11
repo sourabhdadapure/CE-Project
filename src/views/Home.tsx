@@ -7,7 +7,7 @@ export default class Home extends React.Component {
     return (
       <div>
         <Typography>Home</Typography>
-        <Buttons.Contained title="Login With Google" onPress={() => {}} />
+        <Buttons.Contained title="SignOut" onPress={() => {}} />
       </div>
     );
   }
