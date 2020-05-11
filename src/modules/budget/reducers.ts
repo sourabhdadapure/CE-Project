@@ -31,10 +31,10 @@ export default function (state = initialState, action: any) {
       return {
         ...state,
         loading: false,
-        salary: action.salary,
-        expensePercentage: action.expensePercentage,
-        expense: action.expense,
-        savings: action.savings,
+        salary: action.payload.salary,
+        expensePercentage: action.payload.expensePercentage,
+        expense: action.payload.expense,
+        savings: action.payload.savings,
         error: undefined,
       };
     }

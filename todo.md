@@ -1,0 +1,8 @@
+- [ ] Main Functionality
+  - [ ] Add private routing
+  - [ ] Saving authenticated boolean in localstorage
+  - [ ] Final Page ( Add a done button and budget without update )
+- [ ] UI
+  - [ ] Main Responsiveness
+  - [ ] Eight Theme UI/ui
+  - [ ] \$ sign and money value

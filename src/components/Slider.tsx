@@ -65,7 +65,7 @@ interface SliderCompProperties {
   min: number;
   max: number;
   title: string;
-  onChange(val: number | number[]): void;
+  onChange(val: any): void;
 }
 
 export const SliderComp: React.FC<SliderCompProperties> = ({
