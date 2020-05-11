@@ -4,8 +4,8 @@ import appAuth from "../../config/appAuth";
 import firebase from "firebase";
 import { BudgetModel } from "./reducers";
 
-// Update later
-export const updateSavingsAndExpense = (budget: BudgetModel) => {
+// TODO: Update later
+export const updateBudget = (budget: BudgetModel) => {
   return (dispatch: Dispatch) => {
     dispatch({ type: types.BUDGET_LOADING });
     const { expensePercentage, salary } = budget;
