@@ -8,6 +8,8 @@ import { UserModel } from "./modules/user/reducers";
 import { signOut } from "../src/modules/user";
 import { PrivateRoute } from "./components/PrivateRoute";
 import { createBrowserHistory } from "history";
+import { get } from "local-storage";
+import { StorageKeys } from "./constants";
 export const history = createBrowserHistory();
 interface Props {
   user: UserModel;
@@ -18,10 +20,11 @@ interface Props {
 export default class App extends React.Component<Props, {}> {
   render() {
     const { user, signOut } = this.props;
+    const isAuthenticated = get(StorageKeys.UserName);
     return (
       <Router history={history}>
         <HeaderBar
-          isSignedIn={user.isAuthenticated}
+          isSignedIn={!!isAuthenticated}
           onSignOut={() => signOut()}
           title="Budget Planner"
         />
