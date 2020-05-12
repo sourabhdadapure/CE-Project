@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       "& > *": {
         margin: theme.spacing(1),
-        width: 300 + theme.spacing(5) * 2,
+        width: 300 + theme.spacing(3) * 2.5,
         "& label.Mui-focused": {
           color: Palette.Background.Secondary,
         },

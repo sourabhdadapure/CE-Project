@@ -8,13 +8,13 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       "& > *": {
         margin: theme.spacing(1),
-        width: 300 + theme.spacing(5) * 2,
+        width: 300 + theme.spacing(3) * 2.5,
       },
     },
     paperStyle: {
       backgroundColor: Palette.Background.Primary,
       marginTop: theme.spacing(8),
-      width: 300 + theme.spacing(5) * 2.5,
+      width: 300 + theme.spacing(3) * 2.5,
       height: 300 + theme.spacing(5) * 3,
       display: "flex",
       flexDirection: "column",
