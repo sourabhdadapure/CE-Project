@@ -39,9 +39,9 @@ class Home extends React.Component<Props, {}> {
             }}
           />
           <InputField
-            label="Your Salary"
+            label="Enter Your Salary"
             inputType="number"
-            inputValue={budget.salary}
+            inputValue={budget.salary !== 0 ? budget.salary : ""}
             onChange={(event) => {
               const salary = event.target.value;
               updateBudget({ ...budget, salary });
