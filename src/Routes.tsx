@@ -27,16 +27,8 @@ export default class App extends React.Component<Props, {}> {
           <HeaderBar title="Budget Planner" />
 
           <Switch>
-            {/* TODO: add authenticated route later */}
-            {/* <Route exact path="/" component={Home} /> */}
-            {user.isAuthenticated ? (
-              <React.Fragment>
-                <Redirect to="/home" />
-                <Route exact component={Home} />
-              </React.Fragment>
-            ) : (
-              <Route exact path="/" component={Splash} />
-            )}
+            <Route exact path="/" component={Splash} />
+            <Route exact path="/home" component={Home} />
             <Route exact path="/budget" component={Budget} />
           </Switch>
         </div>
