@@ -1,11 +1,15 @@
 export const Colors = {
+  HeaderBar: {
+    Primary: "#E9507A",
+    Secondary: "#F3A833",
+  },
   Background: {
-    Primary: "#092181",
-    Secondary: "#2B77AD",
+    Primary: "#1D7CF8",
+    Secondary: "#4CB4E4",
     Card: "#828994",
   },
   Buttons: {
-    Primary: "#78CCFB",
+    Primary: "#4CB4E4",
     PrimaryShadow: "#B1DEFC",
     White: "#FFFFFF",
     Blue: "#5289fe",

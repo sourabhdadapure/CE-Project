@@ -1,5 +1,7 @@
 import * as React from "react";
 import { Paper, makeStyles, Theme, createStyles } from "@material-ui/core";
+import UI from "../ui";
+const Palette = UI.Colors;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -10,6 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     paperStyle: {
+      backgroundColor: Palette.Background.Primary,
       marginTop: theme.spacing(8),
       width: 300 + theme.spacing(5) * 2.5,
       height: 300 + theme.spacing(5) * 3,

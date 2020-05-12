@@ -1,12 +1,15 @@
 import React from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import UI from "../ui";
 
+const Palette = UI.Colors.Buttons;
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       "& > *": {
         margin: theme.spacing(1),
+        background: Palette.Primary,
       },
     },
   })
