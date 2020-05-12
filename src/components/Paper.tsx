@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     paperStyle: {
-      backgroundColor: "red",
       marginTop: theme.spacing(8),
       width: 300 + theme.spacing(5) * 2.5,
       height: 300 + theme.spacing(5) * 3,
