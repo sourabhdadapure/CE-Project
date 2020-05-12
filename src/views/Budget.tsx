@@ -1,6 +1,6 @@
 import * as React from "react";
 import Typography from "@material-ui/core/Typography";
-import { Buttons, FieldList } from "../components";
+import { Buttons, FieldList, Labels } from "../components";
 
 import { updateBudget } from "../modules/budget";
 import { BudgetModel } from "../modules/budget/reducers";
@@ -29,8 +29,8 @@ export default class Budget extends React.Component<Props, {}> {
           justifyContent: "center",
         }}>
         <Paper>
-          {userName && <Typography>Thank You {userName}</Typography>}
-          <Typography>Here's your monthly budget</Typography>
+          {userName && <Labels.H5 text={`Thank you ${userName}`} />}
+          <Labels.H5 text="Here's your monthly budget" />
           <FieldList
             list={[
               {
