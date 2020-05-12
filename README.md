@@ -16,13 +16,22 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser if
 * Redux for state management 
 * Customizable components using Material-UI
 
-### `Screens`
+### `Desktop Browser Screens`
 
 <img src="screenshots/1.png" width=500/>
 
 <img src="screenshots/2.png" width=500/>
 
 <img src="screenshots/3.png" width=500/>
+
+### `Mobile Browser Screens`
+
+<img src="screenshots/4.png" width=500/>
+
+<img src="screenshots/5.png" width=500/>
+
+<img src="screenshots/6.png" width=500/>
+
 
 
 
