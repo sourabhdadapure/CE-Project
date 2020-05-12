@@ -17,7 +17,7 @@ export default class Splash extends React.Component<Props, {}> {
     const { login } = this.props;
     const Palette = UI.Colors;
     return (
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div>
         <Paper>
           <Labels.H6 text="Start planning your budget" />
 

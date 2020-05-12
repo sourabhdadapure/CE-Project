@@ -23,11 +23,7 @@ export default class Budget extends React.Component<Props, {}> {
     const { budget, user } = this.props;
     const userName = get(StorageKeys.UserName);
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}>
+      <div>
         <Paper>
           {userName && <Labels.H6 text={`Thank you ${userName}`} />}
           <Labels.Body text="Here's your monthly budget" />

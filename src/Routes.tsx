@@ -27,12 +27,18 @@ export default class App extends React.Component<Props, {}> {
           onSignOut={() => signOut()}
           title="Budget Planner"
         />
-
-        <Switch>
-          <Route exact path="/" component={Splash} />
-          <PrivateRoute exact path="/home" comp={Home} />
-          <PrivateRoute exact path="/budget" comp={Budget} />
-        </Switch>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
+          <Switch>
+            <Route exact path="/" component={Splash} />
+            <PrivateRoute exact path="/home" comp={Home} />
+            <PrivateRoute exact path="/budget" comp={Budget} />
+          </Switch>
+        </div>
       </Router>
     );
   }

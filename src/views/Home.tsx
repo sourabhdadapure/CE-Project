@@ -22,7 +22,7 @@ class Home extends React.Component<Props, {}> {
     const { budget, updateBudget } = this.props;
 
     return (
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div>
         <Paper>
           <Slider
             min={0}
