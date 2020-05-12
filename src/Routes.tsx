@@ -7,17 +7,26 @@ import { connect } from "react-redux";
 import { UserModel } from "./modules/user/reducers";
 import Home from "./views/Home";
 import Budget from "./views/Budget";
+import { signOut } from "../src/modules/user";
 import { PrivateRoute } from "./components/PrivateRoute";
 import { createBrowserHistory } from "history";
 export const history = createBrowserHistory();
 interface Props {
   user: UserModel;
+  signOut(): void;
 }
+
+@(connect((state: UserModel) => state, { signOut }) as any)
 export default class App extends React.Component<Props, {}> {
   render() {
+    const { user, signOut } = this.props;
     return (
       <Router history={history}>
-        <HeaderBar title="Budget Planner" />
+        <HeaderBar
+          isSignedIn={user.isAuthenticated}
+          onSignOut={() => signOut()}
+          title="Budget Planner"
+        />
 
         <Switch>
           <Route exact path="/" component={Splash} />

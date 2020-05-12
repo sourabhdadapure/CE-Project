@@ -48,7 +48,10 @@ export default function (state = initialState, action: any) {
     }
 
     case types.LOGOUT_SUCCESS: {
-      return state;
+      return {
+        ...state,
+        isAuthenticated: false,
+      };
     }
     default:
       return state;

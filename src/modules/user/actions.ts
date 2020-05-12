@@ -19,7 +19,6 @@ export const login = () => {
         }
         dispatch({ type: types.LOGIN_SUCCESS, payload: true });
         history.push("/home");
-        console.log("User", user);
       });
     } catch (err) {
       dispatch({ type: types.LOGIN_ERROR, error: err });
@@ -44,6 +43,7 @@ export const signOut = () => {
       await appAuth.auth().signOut();
       remove(StorageKeys.UserName);
       dispatch({ type: types.LOGOUT_SUCCESS });
+      history.push("/");
     } catch (error) {
       dispatch({ type: types.LOGOUT_ERROR, error });
     }

@@ -3,9 +3,7 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+import { Buttons } from "./Buttons";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,9 +21,15 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface HeaderProperties {
   title: string;
+  isSignedIn: boolean;
+  onSignOut(): void;
 }
 
-export const HeaderBar: React.FC<HeaderProperties> = ({ title }) => {
+export const HeaderBar: React.FC<HeaderProperties> = ({
+  title,
+  isSignedIn,
+  onSignOut,
+}) => {
   const classes = useStyles();
 
   return (
@@ -38,6 +42,9 @@ export const HeaderBar: React.FC<HeaderProperties> = ({ title }) => {
             className={classes.title}>
             {title}
           </Typography>
+          {isSignedIn && (
+            <Buttons.Contained onPress={onSignOut} title="Sign Out" />
+          )}
         </Toolbar>
       </AppBar>
     </div>
