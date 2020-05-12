@@ -11,6 +11,7 @@ import Splash from "../src/views/Splash";
 import { connect } from "react-redux";
 import { UserModel } from "./modules/user/reducers";
 import Home from "./views/Home";
+import Budget from "./views/Budget";
 
 interface Props {
   user: UserModel;
@@ -24,8 +25,10 @@ export default class App extends React.Component<Props, {}> {
       <Router>
         <div>
           <HeaderBar title="Budget Planner" />
+
           <Switch>
             {/* TODO: add authenticated route later */}
+            {/* <Route exact path="/" component={Home} /> */}
             {user.isAuthenticated ? (
               <React.Fragment>
                 <Redirect to="/home" />
@@ -34,6 +37,7 @@ export default class App extends React.Component<Props, {}> {
             ) : (
               <Route exact path="/" component={Splash} />
             )}
+            <Route exact path="/budget" component={Budget} />
           </Switch>
         </div>
       </Router>

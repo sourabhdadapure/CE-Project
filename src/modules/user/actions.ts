@@ -10,14 +10,14 @@ export const login = () => {
     try {
       const provider = new firebase.auth.GoogleAuthProvider();
 
-      const login = await appAuth.auth().signInWithPopup(provider);
+      await appAuth.auth().signInWithPopup(provider);
       // console.log("redirected", login);
       // const authorized = await appAuth.auth().getRedirectResult();
       // console.log("redirected", authorized.credential);
-      if (login.credential) {
-        console.log("Login success");
+      await appAuth.auth().onAuthStateChanged((user) => {
+        console.log("BLAHHH", user);
         dispatch({ type: types.LOGIN_SUCCESS, payload: true });
-      }
+      });
     } catch (err) {
       console.log("Login Failed", err);
       dispatch({ type: types.LOGIN_ERROR, error: err });

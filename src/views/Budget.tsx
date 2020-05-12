@@ -1,6 +1,6 @@
 import * as React from "react";
 import Typography from "@material-ui/core/Typography";
-import { Buttons } from "../components";
+import { Buttons, FieldList } from "../components";
 
 import { updateBudget } from "../modules/budget";
 import { BudgetModel } from "../modules/budget/reducers";
@@ -16,40 +16,22 @@ interface Props {
 }) as any)
 export default class Budget extends React.Component<Props, {}> {
   render() {
-    const { budget, updateBudget } = this.props;
+    const { budget } = this.props;
 
     return (
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}>
         <Paper>
-          <Slider
-            min={0}
-            max={30}
-            title="Expense Slider"
-            onChange={(val) => {
-              const expensePercentage = val;
-              updateBudget({ ...budget, expensePercentage });
-            }}
-          />
-          <InputField
-            label="Your Salary"
-            inputType="number"
-            inputValue={budget.salary}
-            onChange={(event) => {
-              const salary = event.target.value;
-              updateBudget({ ...budget, salary });
-            }}
-          />
-          <InputField
-            label="Your Expense"
-            inputType="number"
-            inputValue={budget.expense}
-            onChange={() => {}}
-          />
-          <InputField
-            label="Your Savings"
-            inputType="number"
-            inputValue={budget.savings}
-            onChange={() => {}}
+          <FieldList
+            list={[
+              { label: "Your Election:", value: budget.expensePercentage },
+              { label: "Your Salary:", value: budget.salary },
+              { label: "Your Expense:", value: budget.expense },
+              { label: "Your Savings:", value: budget.savings },
+            ]}
           />
         </Paper>
       </div>
