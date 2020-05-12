@@ -4,6 +4,7 @@ import appAuth from "../../config/appAuth";
 import firebase from "firebase";
 import ls, { get, set } from "local-storage";
 import { StorageKeys } from "../../constants";
+import { history } from "../../Routes";
 
 export const login = () => {
   return async (dispatch: Dispatch) => {
@@ -17,6 +18,8 @@ export const login = () => {
           set<string>(StorageKeys.UserName, user.displayName);
         }
         dispatch({ type: types.LOGIN_SUCCESS, payload: true });
+        history.push("/home");
+        console.log("User", user);
       });
     } catch (err) {
       dispatch({ type: types.LOGIN_ERROR, error: err });

@@ -17,7 +17,7 @@ export default class Splash extends React.Component<Props, {}> {
     return (
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Paper>
-          <Typography>Start Planing your budget</Typography>
+          <Typography>Start planning your budget</Typography>
           <Buttons.Contained
             title="Login With Google"
             onPress={() => login()}

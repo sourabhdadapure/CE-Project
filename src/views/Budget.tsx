@@ -30,7 +30,7 @@ export default class Budget extends React.Component<Props, {}> {
         }}>
         <Paper>
           {userName && <Typography>Thank You {userName}</Typography>}
-          <Typography>Here's Your monthly budget</Typography>
+          <Typography>Here's your monthly budget</Typography>
           <FieldList
             list={[
               {
