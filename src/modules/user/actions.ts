@@ -2,33 +2,34 @@ import types from "./types";
 import { Dispatch } from "redux";
 import appAuth from "../../config/appAuth";
 import firebase from "firebase";
+import ls, { get, set } from "local-storage";
+import { StorageKeys } from "../../constants";
 
-// Update later
 export const login = () => {
   return async (dispatch: Dispatch) => {
-    dispatch({ type: types.LOGIN_LOADING });
     try {
+      dispatch({ type: types.LOGIN_LOADING });
       const provider = new firebase.auth.GoogleAuthProvider();
 
       await appAuth.auth().signInWithPopup(provider);
-      // console.log("redirected", login);
-      // const authorized = await appAuth.auth().getRedirectResult();
-      // console.log("redirected", authorized.credential);
       await appAuth.auth().onAuthStateChanged((user) => {
-        console.log("BLAHHH", user);
+        if (user && user.displayName) {
+          set<string>(StorageKeys.UserName, user.displayName);
+        }
         dispatch({ type: types.LOGIN_SUCCESS, payload: true });
       });
     } catch (err) {
-      console.log("Login Failed", err);
       dispatch({ type: types.LOGIN_ERROR, error: err });
     }
+  };
+};
 
-    // .auth()
-    // .signInWithPopup(provider)
-    // appAuth
-    //   .auth()
-    //   .signInWithPopup(provider)
-    //   .then((user) => dispatch({ type: types.LOGIN_SUCCESS, payload: user }))
-    //   .catch((err) => dispatch({ type: types.LOGIN_ERROR, error: err }));
+export const onAuthUpdated = () => {
+  return async (dispatch: Dispatch) => {
+    try {
+      appAuth.auth().onAuthStateChanged((user) => console.log("blah", user));
+    } catch (err) {
+      dispatch({ type: types.LOGIN_ERROR, error: err });
+    }
   };
 };

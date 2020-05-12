@@ -33,8 +33,8 @@ export const FieldList: React.FC<FieldListProperties> = ({ list }) => {
 
   return (
     <div className={classes.root}>
-      {list.map((item) => (
-        <div className={classes.fieldStyle}>
+      {list.map((item, idx) => (
+        <div key={idx} className={classes.fieldStyle}>
           <Typography>{item.label} </Typography>
           <Typography>{item.value}</Typography>
         </div>
