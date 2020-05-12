@@ -4,3 +4,4 @@ export { InputField } from "./InputField";
 export { FieldList } from "./FieldList";
 export { PaperComponent as Paper } from "./Paper";
 export { SliderComp as Slider } from "./Slider";
+export { Labels } from "./Labels";
