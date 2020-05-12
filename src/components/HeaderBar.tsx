@@ -44,7 +44,7 @@ export const HeaderBar: React.FC<HeaderProperties> = ({
         <Toolbar>
           <Typography
             style={{ display: "flex", justifyContent: "center" }}
-            variant="h6"
+            variant="h5"
             className={classes.title}>
             {title}
           </Typography>
