@@ -7,6 +7,7 @@ import { BudgetModel } from "../modules/budget/reducers";
 import { connect } from "react-redux";
 import { InputField, Paper, Slider } from "../components";
 import { withRouter, RouteComponentProps } from "react-router-dom";
+import Utils from "../utils";
 
 interface IProps {
   updateBudget(budget: BudgetModel): void;
@@ -20,6 +21,9 @@ type Props = IProps & RouteComponentProps;
 class Home extends React.Component<Props, {}> {
   render() {
     const { budget, updateBudget } = this.props;
+
+    const budgetExpense = Utils.moneyFormatter(budget.expense);
+    const budgetSavings = Utils.moneyFormatter(budget.savings);
 
     return (
       <div>
@@ -45,8 +49,8 @@ class Home extends React.Component<Props, {}> {
           />
           <FieldList
             list={[
-              { label: "Your Expense:", value: "$" + budget.expense },
-              { label: "Your Savings:", value: "$" + budget.savings },
+              { label: "Your Expense:", value: "$" + budgetExpense },
+              { label: "Your Savings:", value: "$" + budgetSavings },
             ]}
           />
           <Buttons.Contained

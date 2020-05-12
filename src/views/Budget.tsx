@@ -9,6 +9,7 @@ import { InputField, Paper, Slider } from "../components";
 import { UserModel } from "../modules/user/reducers";
 import ls, { get } from "local-storage";
 import { StorageKeys } from "../constants";
+import Utils from "../utils";
 
 interface Props {
   updateBudget(budget: BudgetModel): void;
@@ -22,6 +23,9 @@ export default class Budget extends React.Component<Props, {}> {
   render() {
     const { budget, user } = this.props;
     const userName = get(StorageKeys.UserName);
+    const salary = Utils.moneyFormatter(budget.salary);
+    const expense = Utils.moneyFormatter(budget.expense);
+    const savings = Utils.moneyFormatter(budget.savings);
     return (
       <div>
         <Paper>
@@ -33,9 +37,9 @@ export default class Budget extends React.Component<Props, {}> {
                 label: "Your Election:",
                 value: budget.expensePercentage + "%",
               },
-              { label: "Your Salary:", value: "$" + budget.salary },
-              { label: "Your Expense:", value: "$" + budget.expense },
-              { label: "Your Savings:", value: "$" + budget.savings },
+              { label: "Your Salary:", value: "$" + salary },
+              { label: "Your Expense:", value: "$" + expense },
+              { label: "Your Savings:", value: "$" + savings },
             ]}
           />
         </Paper>
