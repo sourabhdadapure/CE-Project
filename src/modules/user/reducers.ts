@@ -39,6 +39,17 @@ export default function (state = initialState, action: any) {
         error: action.error,
       };
     }
+
+    case types.LOGIN_ERROR: {
+      return {
+        ...state,
+        error: action.error,
+      };
+    }
+
+    case types.LOGOUT_SUCCESS: {
+      return state;
+    }
     default:
       return state;
   }

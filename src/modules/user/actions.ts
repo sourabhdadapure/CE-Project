@@ -2,7 +2,7 @@ import types from "./types";
 import { Dispatch } from "redux";
 import appAuth from "../../config/appAuth";
 import firebase from "firebase";
-import ls, { get, set } from "local-storage";
+import ls, { get, set, remove } from "local-storage";
 import { StorageKeys } from "../../constants";
 import { history } from "../../Routes";
 
@@ -33,6 +33,19 @@ export const onAuthUpdated = () => {
       appAuth.auth().onAuthStateChanged((user) => console.log("blah", user));
     } catch (err) {
       dispatch({ type: types.LOGIN_ERROR, error: err });
+    }
+  };
+};
+
+export const signOut = () => {
+  return async (dispatch: Dispatch) => {
+    try {
+      dispatch({ type: types.LOGOUT_LOADING });
+      await appAuth.auth().signOut();
+      remove(StorageKeys.UserName);
+      dispatch({ type: types.LOGOUT_SUCCESS });
+    } catch (error) {
+      dispatch({ type: types.LOGOUT_ERROR, error });
     }
   };
 };
