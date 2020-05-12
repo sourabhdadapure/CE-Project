@@ -28,6 +28,7 @@ class Home extends React.Component<Props, {}> {
             min={0}
             max={30}
             title="Expense Slider"
+            inputValue={budget.expensePercentage}
             onChange={(val) => {
               const expensePercentage = val;
               updateBudget({ ...budget, expensePercentage });

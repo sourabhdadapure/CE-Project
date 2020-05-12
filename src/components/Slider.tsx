@@ -65,6 +65,7 @@ interface SliderCompProperties {
   min: number;
   max: number;
   title: string;
+  inputValue: number;
   onChange(val: any): void;
 }
 
@@ -73,6 +74,7 @@ export const SliderComp: React.FC<SliderCompProperties> = ({
   max,
   title,
   onChange,
+  inputValue,
 }) => {
   const classes = useStyles();
 
@@ -88,6 +90,7 @@ export const SliderComp: React.FC<SliderCompProperties> = ({
           valueLabelDisplay="auto"
           aria-label="pretto slider"
           defaultValue={0}
+          value={inputValue}
           min={min}
           max={max}
         />
