@@ -4,6 +4,9 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { Buttons } from "./Buttons";
+import UI from "../ui";
+
+const Palette = UI.Colors;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -15,6 +18,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       flexGrow: 1,
+    },
+    appBarStyles: {
+      background: `linear-gradient(to right, ${Palette.HeaderBar.Primary}, ${Palette.HeaderBar.Secondary})`,
     },
   })
 );
@@ -34,7 +40,7 @@ export const HeaderBar: React.FC<HeaderProperties> = ({
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar className={classes.appBarStyles} position="static">
         <Toolbar>
           <Typography
             style={{ display: "flex", justifyContent: "center" }}
