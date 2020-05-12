@@ -7,7 +7,10 @@ import {
 } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
 import Typography from "@material-ui/core/Typography";
+import { Labels } from "./Labels";
+import UI from "../ui";
 
+const Palette = UI.Colors.Background;
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -31,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const PrettoSlider = withStyles({
   root: {
-    color: "#52af77",
+    color: Palette.Secondary,
     height: 8,
     marginRight: 20,
     marginLeft: 20,
@@ -80,11 +83,10 @@ export const SliderComp: React.FC<SliderCompProperties> = ({
 
   return (
     <div className={classes.root}>
-      <Typography className={classes.TitleStyle} gutterBottom>
-        {title}
-      </Typography>
+      <Labels.Body text={title} />
+
       <div className={classes.SliderContainer}>
-        <Typography>{min + "%"}</Typography>
+        <Labels.Body text={min + "%"} />
         <PrettoSlider
           onChange={(event, value) => onChange(value)}
           valueLabelDisplay="auto"
@@ -94,7 +96,7 @@ export const SliderComp: React.FC<SliderCompProperties> = ({
           min={min}
           max={max}
         />
-        <Typography>{max + "%"}</Typography>
+        <Labels.Body text={max + "%"} />
       </div>
     </div>
   );

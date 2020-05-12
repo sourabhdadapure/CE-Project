@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface LabelProperties {
   text: string;
-  fontSize?: "h4" | "h5" | "h6";
+  fontSize?: "h4" | "h5" | "h6" | "body1";
   style?: any;
 }
 
@@ -47,5 +47,8 @@ export const Labels = {
   ),
   H6: (props: LabelProperties) => (
     <Font {...props} style={props.style} text={props.text} fontSize="h6" />
+  ),
+  Body: (props: LabelProperties) => (
+    <Font {...props} style={props.style} text={props.text} fontSize="body1" />
   ),
 };
