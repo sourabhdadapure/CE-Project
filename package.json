@@ -31,7 +31,7 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "buildandrun": "npm install && npm start",
+    "buildandstart": "npm install && npm start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
