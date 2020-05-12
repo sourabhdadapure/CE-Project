@@ -1,6 +1,7 @@
 import React from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import { Labels } from "./Labels";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -35,8 +36,8 @@ export const FieldList: React.FC<FieldListProperties> = ({ list }) => {
     <div className={classes.root}>
       {list.map((item, idx) => (
         <div key={idx} className={classes.fieldStyle}>
-          <Typography>{item.label} </Typography>
-          <Typography>{item.value}</Typography>
+          <Labels.Body text={item.label} />
+          <Labels.Body text={item.value.toString()} />
         </div>
       ))}
     </div>

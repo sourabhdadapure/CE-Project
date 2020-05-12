@@ -29,8 +29,8 @@ export default class Budget extends React.Component<Props, {}> {
           justifyContent: "center",
         }}>
         <Paper>
-          {userName && <Labels.H5 text={`Thank you ${userName}`} />}
-          <Labels.H5 text="Here's your monthly budget" />
+          {userName && <Labels.H6 text={`Thank you ${userName}`} />}
+          <Labels.Body text="Here's your monthly budget" />
           <FieldList
             list={[
               {
