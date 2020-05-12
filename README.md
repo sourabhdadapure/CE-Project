@@ -26,11 +26,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser if
 
 ### `Mobile Browser Screens`
 
-<img src="screenshots/4.png" width=500/>
+<img src="screenshots/4.jpeg" width=500/>
 
-<img src="screenshots/5.png" width=500/>
+<img src="screenshots/5.jpeg" width=500/>
 
-<img src="screenshots/6.png" width=500/>
+<img src="screenshots/6.jpeg" width=500/>
 
 
 
