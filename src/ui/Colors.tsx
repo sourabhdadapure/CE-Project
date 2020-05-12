@@ -2,6 +2,7 @@ export const Colors = {
   Background: {
     Primary: "#092181",
     Secondary: "#2B77AD",
+    Card: "#828994",
   },
   Buttons: {
     Primary: "#78CCFB",

@@ -12,11 +12,11 @@ const useStyles = makeStyles((theme: Theme) =>
     paperStyle: {
       backgroundColor: "red",
       marginTop: theme.spacing(8),
-      width: 300 + theme.spacing(5) * 2,
+      width: 300 + theme.spacing(5) * 2.5,
       height: 300 + theme.spacing(5) * 3,
       display: "flex",
       flexDirection: "column",
-      justifyContent: "center",
+      justifyContent: "space-between",
       alignItems: "center",
       padding: `${theme.spacing(2)}px ${theme.spacing(1)}px ${theme.spacing(
         3
