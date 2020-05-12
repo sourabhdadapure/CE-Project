@@ -87,7 +87,7 @@ export const SliderComp: React.FC<SliderCompProperties> = ({
           onChange={(event, value) => onChange(value)}
           valueLabelDisplay="auto"
           aria-label="pretto slider"
-          defaultValue={20}
+          defaultValue={0}
           min={min}
           max={max}
         />
