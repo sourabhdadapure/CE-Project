@@ -1,10 +1,10 @@
 import * as React from "react";
 import Typography from "@material-ui/core/Typography";
-import { Buttons } from "../components";
+import { Buttons, FieldList } from "../components";
 
 import { updateBudget } from "../modules/budget";
 import { BudgetModel } from "../modules/budget/reducers";
-import { Provider, connect } from "react-redux";
+import { connect } from "react-redux";
 import { InputField, Paper, Slider } from "../components";
 
 interface Props {
@@ -39,17 +39,11 @@ export default class Home extends React.Component<Props, {}> {
               updateBudget({ ...budget, salary });
             }}
           />
-          <InputField
-            label="Your Expense"
-            inputType="number"
-            inputValue={budget.expense}
-            onChange={() => {}}
-          />
-          <InputField
-            label="Your Savings"
-            inputType="number"
-            inputValue={budget.savings}
-            onChange={() => {}}
+          <FieldList
+            list={[
+              { label: "Your Expense:", value: "$" + budget.expense },
+              { label: "Your Savings:", value: "$" + budget.savings },
+            ]}
           />
         </Paper>
       </div>
